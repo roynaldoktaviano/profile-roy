@@ -11,20 +11,20 @@ export default function About({ language }: AboutProps) {
     en: {
       title: 'About Me',
       intro: 'Hello, I am',
-      name: 'Yamamoto Taro',
-      description: `Digital creator passionate about blending traditional Japanese aesthetics with modern design principles.`,
-      skills: ['Web Development', 'UI/UX Design', 'Creative Direction', 'Brand Identity'],
-      philosophy: `My approach is rooted in the Japanese concept of "Ma" (間) - the negative space that gives meaning to form.`,
+      name: 'Roynald Oktaviano Kalele',
+      description: `Crafting high-performance websites with a strong focus on scalability, clean architecture, and user experience—built to support sustainable business growth and long-term digital success.`,
+      skills: ['Web Development', 'Digital Marketing', 'UI / UX Enthusiast', 'Brand Identity'],
+      philosophy: `My approach is rooted in the Japanese concept of Shoshin (初心) — the beginner’s mind that stays open, curious, and willing to learn, no matter the level of experience.`,
       years: '5+',
       yearsLabel: 'Years Experience'
     },
     ja: {
       title: '私について',
       intro: 'こんにちは、私は',
-      name: '山本 太郎',
-      description: `伝統的な日本の美学と現代的なデザイン原則を融合させることに情熱を持つデジタルクリエイターです。`,
-      skills: ['ウェブ開発', 'UI/UXデザイン', 'クリエイティブディレクション', 'ブランドアイデンティティ'],
-      philosophy: `私のアプローチは「間」という日本の概念に根ざしています。形に意味を与える「余白」。`,
+      name: 'ロイナルド・オクタビアーノ・カレレ',
+      description: `スケーラビリティ、クリーンなアーキテクチャ、ユーザー体験に重点を置いた高性能ウェブサイトの構築——持続可能なビジネス成長と長期的なデジタル成功を支える基盤として設計されています。`,
+      skills: ['Web開発」','デジタルマーケティング','UI/UX愛好家','ブランドアイデンティティ'],
+      philosophy: `私のアプローチは、日本の「初心（しゅうしん）」という概念に根ざしています。これは、経験のレベルに関わらず、常に開かれ、好奇心を持ち、学ぶ意欲を持ち続ける初心者の心です。`,
       years: '5年以上',
       yearsLabel: 'の経験'
     }

@@ -14,12 +14,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Yamamoto Taro | Digital Creator",
+  title: "Roynald Kalele | Website Developer & Digital Marketing",
   description: "Digital creator crafting experiences with Japanese aesthetics. Explore my portfolio and creative work.",
-  keywords: ["Yamamoto Taro", "Digital Creator", "Web Design", "Portfolio", "Japanese Design", "Creative"],
-  authors: [{ name: "Yamamoto Taro" }],
+  keywords: ["Roynald Kalele", "Website Developer", "Digital Marketing", "Web Design", "Portfolio", "Japanese Design", "Creative"],
+  authors: [{ name: "Roynald Kalele" }],
   openGraph: {
-    title: "Yamamoto Taro | Digital Creator",
+    title: "Roynald Kalele | Website Developer & Digital Marketing",
     description: "Digital creator crafting experiences with Japanese aesthetics",
     type: "website",
   },

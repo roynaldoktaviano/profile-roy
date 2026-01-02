@@ -10,16 +10,16 @@ interface HeroProps {
 export default function Hero({ language }: HeroProps) {
   const content = {
     en: {
-      name: 'Yamamoto Taro',
-      role: 'Digital Creator',
-      subtitle: 'Crafting digital experiences with Japanese aesthetics',
-      cta: 'Explore Work'
+      name: 'Roynald Oktaviano Kalele',
+      role: 'Website Developer & Digital Marketing',
+      subtitle: 'Crafting websites with performance and growth in mind',
+      cta: 'See My Work'
     },
     ja: {
-      name: '山本 太郎',
-      role: 'デジタルクリエイター',
-      subtitle: '日本の美学でデジタル体験を創造',
-      cta: '作品を見る'
+      name: 'ロイナルド・オクタビアーノ・カレレ',
+      role: 'ウェブサイト開発者 & デジタルマーケティング',
+      subtitle: 'パフォーマンスと成長を念頭に置いたウェブサイト制作',
+      cta: '私の作品を見る'
     }
   };
 
