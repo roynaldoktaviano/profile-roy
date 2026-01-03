@@ -70,7 +70,7 @@ export default function About({ language }: AboutProps) {
             viewport={{ once: true }}
             className="flex items-center gap-4 p-4 bg-stone-50 rounded-lg"
           >
-            <span className="text-4xl md:text-5xl font-light text-stone-800">{t.years}</span>
+            <span className="text-4xl md:text-sm font-light text-stone-800">{t.years}</span>
             <div className="h-10 w-px bg-stone-300" />
             <p className="text-stone-600 text-sm">{t.yearsLabel}</p>
           </motion.div>

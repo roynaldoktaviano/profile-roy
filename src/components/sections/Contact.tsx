@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, Twitter, Send } from 'lucide-react';
+import { Mail, Github, Linkedin, Twitter, Send, Dribbble } from 'lucide-react';
 
 interface ContactProps {
   language: 'en' | 'ja';
@@ -13,7 +13,7 @@ export default function Contact({ language }: ContactProps) {
       title: 'Contact',
       subtitle: 'Get in Touch',
       description: `Always open to discussing new projects and creative ideas.`,
-      email: 'hello@yamamoto.design',
+      email: 'roynald.okta@gmail.com',
       form: {
         name: 'Name',
         email: 'Email',
@@ -30,7 +30,7 @@ export default function Contact({ language }: ContactProps) {
       title: '連絡先',
       subtitle: 'お問い合わせ',
       description: `新しいプロジェクトやクリエイティブなアイデアについていつでも話しかけてください。`,
-      email: 'hello@yamamoto.design',
+      email: 'roynald.okta@gmail.com',
       form: {
         name: 'お名前',
         email: 'メールアドレス',
@@ -104,25 +104,28 @@ export default function Contact({ language }: ContactProps) {
             </p>
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://github.com/roynaldoktaviano/"
+                target='_blank'
                 className="p-2 bg-stone-100 hover:bg-stone-800 hover:text-white text-stone-600 rounded-full transition-all duration-300"
                 aria-label={t.socials.github}
               >
                 <Github className="w-4 h-4" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/roynald-oktaviano-852508191/"
+                target='_blank'
                 className="p-2 bg-stone-100 hover:bg-stone-800 hover:text-white text-stone-600 rounded-full transition-all duration-300"
                 aria-label={t.socials.linkedin}
               >
                 <Linkedin className="w-4 h-4" />
               </a>
               <a
-                href="#"
+                href="https://dribbble.com/roynaldoktaviano"
+                target='_blank'
                 className="p-2 bg-stone-100 hover:bg-stone-800 hover:text-white text-stone-600 rounded-full transition-all duration-300"
                 aria-label={t.socials.twitter}
               >
-                <Twitter className="w-4 h-4" />
+                <Dribbble className="w-4 h-4" />
               </a>
             </div>
           </motion.div>
@@ -203,8 +206,8 @@ export default function Contact({ language }: ContactProps) {
       >
         <p className="text-center text-stone-500 text-xs">
           {language === 'en'
-            ? '© 2024 Yamamoto Taro. All rights reserved.'
-            : '© 2024 山本 太郎. すべての権利を保有しています。'}
+            ? '© 2026 Roynald Oktaviano. All rights reserved.'
+            : '© 2026 ロイナルド・オクタビアーノ・カレレ. すべての権利を保有しています。'}
         </p>
       </motion.div>
     </div>

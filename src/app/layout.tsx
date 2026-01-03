@@ -15,14 +15,43 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Roynald Kalele | Website Developer & Digital Marketing",
-  description: "Digital creator crafting experiences with Japanese aesthetics. Explore my portfolio and creative work.",
-  keywords: ["Roynald Kalele", "Website Developer", "Digital Marketing", "Web Design", "Portfolio", "Japanese Design", "Creative"],
+  description: "Crafting high-performance websites with a strong focus on scalability, clean architecture, and user experience—built.",
+  keywords: ["Roynald Kalele", "Website Developer", "Digital Marketing", "Web Design", "Portfolio", "Web Development", "SEO", "Brand Identity"],
   authors: [{ name: "Roynald Kalele" }],
   openGraph: {
     title: "Roynald Kalele | Website Developer & Digital Marketing",
-    description: "Digital creator crafting experiences with Japanese aesthetics",
+    description: "Crafting high-performance websites with a strong focus on scalability, clean architecture.",
     type: "website",
   },
+    // ✅ Canonical
+    alternates: {
+      canonical: "https://roynaldkalele.com", 
+    },
+  
+    openGraph: {
+      title: "Roynald Kalele | Website Developer & Digital Marketing",
+      description:
+        "Crafting high-performance websites with a strong focus on scalability, clean architecture, and user experience.",
+      type: "website",
+      url: "https://roynaldkalele.com",
+      siteName: "Roynald Kalele",
+      images: [
+        {
+          url: "https://roynald.vercel.app/profil.png", 
+          width: 1200,
+          height: 630,
+          alt: "Roynald Kalele – Website Developer & Digital Marketing",
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: "Roynald Kalele | Website Developer & Digital Marketing",
+      description:
+        "Crafting high-performance websites with a strong focus on scalability, clean architecture, and user experience.",
+      images: ["https://roynald.vercel.app/profil.png"],
+    },
 };
 
 export default function RootLayout({

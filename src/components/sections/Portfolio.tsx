@@ -24,7 +24,7 @@ export default function Portfolio({ language }: PortfolioProps) {
         {
           title: 'PT Colossal Art',
           category: 'Website Design',
-          description: 'Modern and minimalist website for an construction company.',
+          description: 'Modern and minimalist website design for an construction company.',
           tags: ['Figma'],
           image : './porto-colo.jpg',
           link: 'https://dribbble.com/shots/22839524-Colossal-Art-Construction-Architect-UI-Website'
@@ -46,25 +46,28 @@ export default function Portfolio({ language }: PortfolioProps) {
       subtitle: '選ばれた作品',
       projects: [
         {
-          title: '禅庭',
-          category: 'ウェブデザイン',
-          description: '伝統的な日本庭園を紹介するミニマリストウェブサイト。',
-          tags: ['React', 'TypeScript', 'Framer Motion'],
-          image : './portfolio-1.png'
+          title: 'オーキッドテント',
+          category: 'ウェブサイト概要',
+          description: 'オーキッドテント製品を紹介するミニマルなウェブサイト。',
+          tags: ['WordPress', 'PHP', 'Figma'],
+          image : './porto-orchid.jpg',
+          link: 'https://orchid.id'
         },
         {
-          title: '抹茶スタジオ',
-          category: 'Eコマース',
-          description: 'プレミアム抹茶製品のためのモダンなEコマースプラットフォーム。',
-          tags: ['Next.js', 'Stripe', 'Tailwind CSS'],
-          image : './portfolio-1.png'
+          title: 'コロッサル・アート',
+          category: 'ウェブサイトデザイン',
+          description: '建設会社向けのモダンでミニマルなウェブサイトデザイン。',
+          tags: ['Figma'],
+          image : './porto-colo.jpg',
+          link: 'https://dribbble.com/shots/22839524-Colossal-Art-Construction-Architect-UI-Website'
         },
         {
-          title: '判子アイデンティティ',
-          category: 'ブランディング',
-          description: '伝統的な日本の印章デザイン原則を取り入れたブランドアイデンティティ。',
-          tags: ['Illustrator', 'Figma', 'Adobe XD'],
-          image : './portfolio-1.png'
+          title: 'Invite You',
+          category: 'ウェブサイト概要',
+          description: '誕生日・結婚式イベント向けウェブサイトおよび招待システム',
+          tags: ['NextJS', 'HTML', 'TailwindCSS'],
+          image : './porto-inv.jpg',
+          link: 'https://inviteyouinvitation.com/'
         }
       ],
       viewProject: 'プロジェクトを見る',

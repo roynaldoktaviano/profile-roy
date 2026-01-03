@@ -1,13 +1,19 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Github } from 'lucide-react';
+import { useState } from 'react';
 
 interface HeroProps {
   language: 'en' | 'ja';
 }
 
 export default function Hero({ language }: HeroProps) {
+  const [currentSection, setCurrentSection] = useState(0);
+  const scrollToSection = (index: number) => {
+    setCurrentSection(index);
+  };
+  
   const content = {
     en: {
       name: 'Roynald Oktaviano Kalele',
@@ -39,7 +45,9 @@ export default function Hero({ language }: HeroProps) {
           transition={{ duration: 1.2, delay: 0.4 }}
         >
           <div className="w-16 h-16 mx-auto border-2 border-stone-800 rounded-full flex items-center justify-center">
-            <span className="text-3xl font-light text-stone-800"><img src="./log.png" alt="" className='w-10'/></span>
+            <span className="text-3xl font-light text-stone-800">
+              <img src="./log.png" alt="" className='w-10' width={40} height={40} />
+              </span>
           </div>
         </motion.div>
 
@@ -76,13 +84,14 @@ export default function Hero({ language }: HeroProps) {
         </motion.div>
 
         <motion.button
+        onClick={() => window.open("https://github.com/roynaldoktaviano", "_blank")}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.2 }}
           className="group mt-8 px-6 py-3 bg-stone-800 hover:bg-stone-700 text-white rounded-full transition-all duration-300 flex items-center gap-2 mx-auto text-sm"
         >
           <span className="tracking-wider">{t.cta}</span>
-          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <Github className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </motion.button>
       </motion.div>
 
