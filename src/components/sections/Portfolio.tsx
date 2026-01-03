@@ -14,22 +14,28 @@ export default function Portfolio({ language }: PortfolioProps) {
       subtitle: 'Selected Works',
       projects: [
         {
-          title: 'Zen Garden',
-          category: 'Web Design',
-          description: 'A minimalist website showcasing traditional Japanese gardens.',
-          tags: ['React', 'TypeScript', 'Framer Motion']
+          title: 'Orchid Tent',
+          category: 'Website Profile',
+          description: 'A minimalist website showcasing orchid tent products.',
+          tags: ['WordPress', 'PHP', 'Figma'],
+          image : './porto-orchid.jpg',
+          link: 'https://orchid.id'
         },
         {
-          title: 'Matcha Studio',
-          category: 'E-commerce',
-          description: 'Modern e-commerce platform for premium matcha products.',
-          tags: ['Next.js', 'Stripe', 'Tailwind CSS']
+          title: 'PT Colossal Art',
+          category: 'Website Design',
+          description: 'Modern and minimalist website for an construction company.',
+          tags: ['Figma'],
+          image : './porto-colo.jpg',
+          link: 'https://dribbble.com/shots/22839524-Colossal-Art-Construction-Architect-UI-Website'
         },
         {
-          title: 'Hanko Identity',
-          category: 'Branding',
-          description: 'Brand identity featuring traditional Japanese seal design.',
-          tags: ['Illustrator', 'Figma', 'Adobe XD']
+          title: 'Invite You',
+          category: 'Website Profile',
+          description: 'Website and Invitation System for birthday and wedding event',
+          tags: ['NextJS', 'HTML', 'TailwindCSS'],
+          image : './porto-inv.jpg',
+          link: 'https://inviteyouinvitation.com/'
         }
       ],
       viewProject: 'View Project',
@@ -43,19 +49,22 @@ export default function Portfolio({ language }: PortfolioProps) {
           title: '禅庭',
           category: 'ウェブデザイン',
           description: '伝統的な日本庭園を紹介するミニマリストウェブサイト。',
-          tags: ['React', 'TypeScript', 'Framer Motion']
+          tags: ['React', 'TypeScript', 'Framer Motion'],
+          image : './portfolio-1.png'
         },
         {
           title: '抹茶スタジオ',
           category: 'Eコマース',
           description: 'プレミアム抹茶製品のためのモダンなEコマースプラットフォーム。',
-          tags: ['Next.js', 'Stripe', 'Tailwind CSS']
+          tags: ['Next.js', 'Stripe', 'Tailwind CSS'],
+          image : './portfolio-1.png'
         },
         {
           title: '判子アイデンティティ',
           category: 'ブランディング',
           description: '伝統的な日本の印章デザイン原則を取り入れたブランドアイデンティティ。',
-          tags: ['Illustrator', 'Figma', 'Adobe XD']
+          tags: ['Illustrator', 'Figma', 'Adobe XD'],
+          image : './portfolio-1.png'
         }
       ],
       viewProject: 'プロジェクトを見る',
@@ -83,7 +92,7 @@ export default function Portfolio({ language }: PortfolioProps) {
         <p className="text-stone-500 text-sm">{t.subtitle}</p>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-4">
+      <div className="grid md:flex gap-4 md:gap-10 md:justify-between">
         {t.projects.map((project, index) => (
           <motion.div
             key={project.title}
@@ -94,15 +103,11 @@ export default function Portfolio({ language }: PortfolioProps) {
             className="group"
           >
             <div className="space-y-2">
-              <div className="aspect-video bg-stone-100 rounded-lg overflow-hidden group-hover:bg-stone-200 transition-colors">
-                <div className="w-full h-full flex items-center justify-center">
-                  <span className="text-5xl text-stone-300 font-light group-hover:scale-110 transition-transform duration-500">
-                    {project.title.charAt(0)}
-                  </span>
-                </div>
+              <div className="aspect-video  bg-cover h-[10vw]  rounded-lg overflow-hidden group-hover:bg-stone-200 transition-colors" style={{ backgroundImage: `url(${project.image})` }}>
+          
               </div>
 
-              <div className="space-y-1">
+              <div className="space-y-1 mt-5">
                 <span className="text-xs tracking-widest text-stone-500 uppercase">
                   {project.category}
                 </span>
@@ -127,14 +132,16 @@ export default function Portfolio({ language }: PortfolioProps) {
                 </div>
 
                 <div className="flex gap-2 pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button className="flex items-center gap-1 px-3 py-1.5 bg-stone-800 hover:bg-stone-700 text-white rounded-full text-xs transition-colors">
+                  <button 
+                  onClick={() => window.open(`${project.link}`, '_blank')}
+                  className="flex items-center gap-1 px-3 py-1.5 bg-stone-800 hover:bg-stone-700 text-white rounded-full text-xs transition-colors">
                     <ExternalLink className="w-3 h-3" />
                     <span>{t.viewProject}</span>
                   </button>
-                  <button className="flex items-center gap-1 px-3 py-1.5 border border-stone-300 hover:border-stone-400 text-stone-700 rounded-full text-xs transition-colors">
+                  {/* <button className="flex items-center gap-1 px-3 py-1.5 border border-stone-300 hover:border-stone-400 text-stone-700 rounded-full text-xs transition-colors">
                     <Github className="w-3 h-3" />
                     <span>{t.viewCode}</span>
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
@@ -149,7 +156,7 @@ export default function Portfolio({ language }: PortfolioProps) {
         viewport={{ once: true }}
         className="text-center pt-4"
       >
-        <button className="px-6 py-2 border border-stone-800 hover:bg-stone-800 hover:text-white text-stone-800 rounded-full transition-all duration-300 text-xs tracking-wider">
+        <button onClick={() => window.open('https://github.com/roynaldoktaviano', '_blank')} className="px-6 py-2 border border-stone-800 hover:bg-stone-800 hover:text-white text-stone-800 rounded-full transition-all duration-300 text-xs tracking-wider">
           {language === 'en' ? 'View All Projects' : 'すべてのプロジェクトを見る'}
         </button>
       </motion.div>

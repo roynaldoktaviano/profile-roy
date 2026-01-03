@@ -39,7 +39,7 @@ export default function Hero({ language }: HeroProps) {
           transition={{ duration: 1.2, delay: 0.4 }}
         >
           <div className="w-16 h-16 mx-auto border-2 border-stone-800 rounded-full flex items-center justify-center">
-            <span className="text-3xl font-light text-stone-800">和</span>
+            <span className="text-3xl font-light text-stone-800"><img src="./log.png" alt="" className='w-10'/></span>
           </div>
         </motion.div>
 

@@ -59,7 +59,7 @@ export default function About({ language }: AboutProps) {
             className="aspect-[3/4] bg-stone-100 rounded-lg overflow-hidden max-h-[300px]"
           >
             <div className="w-full h-full flex items-center justify-center">
-              <span className="text-7xl text-stone-300 font-light">山</span>
+              <img src="./profil.png" alt="" />
             </div>
           </motion.div>
 
