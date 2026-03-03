@@ -13,15 +13,11 @@ type Language = 'en' | 'ja';
 export default function Home() {
   const [language, setLanguage] = useState<Language>('en');
   const [currentSection, setCurrentSection] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const isScrolling = useRef(false); // Penanda untuk mencegah scroll beruntun
 
   const content = {
-    en: {
-      scroll: 'Scroll to explore'
-    },
-    ja: {
-      scroll: 'スクロール'
-    }
+    en: { scroll: 'Scroll to explore' },
+    ja: { scroll: 'スクロール' }
   };
 
   const t = content[language];
@@ -34,8 +30,13 @@ export default function Home() {
     setCurrentSection(index);
   };
 
-  const handleWheel = (e: WheelEvent) => {
-    e.preventDefault();
+  const handleWheel = (e: React.WheelEvent<HTMLDivElement>) => {
+    // Cegah scroll bawaan browser
+    // Catatan: Jika ada warning di console terkait pasif event, ini bisa dihapus
+    // e.preventDefault(); 
+
+    // Jika sedang dalam masa jeda animasi, abaikan scroll baru
+    if (isScrolling.current) return;
 
     const direction = e.deltaY > 0 ? 1 : -1;
     let newSection = currentSection + direction;
@@ -43,7 +44,16 @@ export default function Home() {
     if (newSection < 0) newSection = 0;
     if (newSection > 3) newSection = 3;
 
+    // Jika tidak pindah section (mentok atas/bawah), batalkan
+    if (newSection === currentSection) return;
+
+    isScrolling.current = true;
     setCurrentSection(newSection);
+
+    // Kunci scroll selama 800ms (sedikit lebih lama dari durasi animasi 0.6s)
+    setTimeout(() => {
+      isScrolling.current = false;
+    }, 800);
   };
 
   return (
