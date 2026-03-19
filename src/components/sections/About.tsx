@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { MapPin, Plane, Utensils, BookOpen, Sparkles, Code2, Coffee } from 'lucide-react';
+import { Sparkles, Code2 } from 'lucide-react'; // Ikon yang ga kepakai udah dibuang
 
 interface AboutProps {
   language: 'en' | 'ja';
@@ -18,14 +18,7 @@ export default function About({ language }: AboutProps) {
       philosophyTitle: 'MINDSET',
       philosophy: `Shoshin (初心) — Keeping a beginner's mind. Always curious, always learning.`,
       years: '5+',
-      yearsText: 'Years Exp',
-      hobbiesTitle: 'OUTSIDE THE MATRIX',
-      hobbies: [
-        { icon: MapPin, text: 'Bali Based', color: 'text-orange-400' },
-        { icon: Plane, text: 'Solo Traveler', color: 'text-sky-400' },
-        { icon: BookOpen, text: 'N3 Nihongo Learner', color: 'text-red-400' },
-        { icon: Utensils, text: 'Budding Chef', color: 'text-yellow-400' }
-      ]
+      yearsText: 'Years Exp'
     },
     ja: {
       tag: '私について',
@@ -36,14 +29,7 @@ export default function About({ language }: AboutProps) {
       philosophyTitle: 'マインドセット',
       philosophy: `「初心」— 常に初心を忘れず、好奇心を持ち、学び続けること。`,
       years: '5+',
-      yearsText: '年の経験',
-      hobbiesTitle: 'マトリックスの外側',
-      hobbies: [
-        { icon: MapPin, text: 'バリ島拠点', color: 'text-orange-400' },
-        { icon: Plane, text: '一人旅', color: 'text-sky-400' },
-        { icon: BookOpen, text: '日本語学習者', color: 'text-red-400' },
-        { icon: Utensils, text: '料理の練習中', color: 'text-yellow-400' }
-      ]
+      yearsText: '年の経験'
     }
   };
 
@@ -64,14 +50,13 @@ export default function About({ language }: AboutProps) {
   };
 
   return (
-    // Padding py lebih kecil di HP (py-10), membesar di Desktop (md:py-16)
+    // Posisikan overflow-y-auto dan h-full biar gampang di-scroll di layar kecil kalau butuh
     <div className="w-full py-10 md:py-16 px-4 md:px-8 max-w-7xl mx-auto overflow-hidden">
       <motion.div 
         variants={containerVariants}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-50px" }}
-        // Gap dikecilin di HP (gap-4), membesar di Desktop (md:gap-6)
         className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 auto-rows-auto"
       >
         
@@ -84,7 +69,6 @@ export default function About({ language }: AboutProps) {
             {t.tag}
           </div>
           
-          {/* Teks responsif: 3xl di HP, membesar ke 6xl di Desktop */}
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white tracking-tight leading-tight mb-3 md:mb-4">
             {t.title}
           </h2>
@@ -93,19 +77,19 @@ export default function About({ language }: AboutProps) {
           </p>
         </motion.div>
 
-        {/* BENTO 2: Photo Card */}
-        <motion.div variants={itemVariants} className="md:col-span-4 relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden group min-h-[280px] md:min-h-[300px]">
+        {/* BENTO 2: Photo Card (Sekarang pakai md:row-span-2 biar memanjang ke bawah!) */}
+        <motion.div variants={itemVariants} className="md:col-span-4 md:row-span-2 relative rounded-[1.5rem] md:rounded-[2rem] overflow-hidden group min-h-[350px] md:min-h-full">
           <img 
             src="./profil.png" 
             alt="Roynald" 
             className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#3e5ba9]/80 via-[#3e5ba9]/20 to-transparent opacity-80 md:opacity-60 group-hover:opacity-40 transition-opacity" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#3e5ba9]/90 via-[#3e5ba9]/20 to-transparent opacity-80 md:opacity-60 group-hover:opacity-40 transition-opacity" />
           
-          {/* Badge Pengalaman - Skala dikecilin dikit di Mobile */}
-          <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 w-20 h-20 md:w-24 md:h-24 bg-white/20 backdrop-blur-md border border-white/40 rounded-full flex flex-col items-center justify-center shadow-2xl md:group-hover:rotate-12 transition-transform duration-500 cursor-default z-10">
-            <span className="text-2xl md:text-3xl font-black text-white drop-shadow-md">{t.years}</span>
-            <span className="text-[8px] md:text-[9px] font-bold text-white uppercase tracking-widest text-center leading-tight">
+          {/* Badge Pengalaman */}
+          <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 w-20 h-20 md:w-28 md:h-28 bg-white/20 backdrop-blur-md border border-white/40 rounded-full flex flex-col items-center justify-center shadow-2xl md:group-hover:rotate-12 transition-transform duration-500 cursor-default z-10">
+            <span className="text-2xl md:text-4xl font-black text-white drop-shadow-md">{t.years}</span>
+            <span className="text-[8px] md:text-[10px] font-bold text-white uppercase tracking-widest text-center leading-tight">
               {t.yearsText}
             </span>
             <motion.div 
@@ -144,28 +128,6 @@ export default function About({ language }: AboutProps) {
           <span className="absolute -right-4 -bottom-4 text-7xl md:text-8xl font-black text-white/5 select-none md:group-hover:scale-110 transition-transform duration-500">
             初心
           </span>
-        </motion.div>
-
-        {/* BENTO 5: Hobbies */}
-        <motion.div variants={itemVariants} className="md:col-span-4 bg-[#2a3f75]/40 border border-[#3e5ba9] rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-8 backdrop-blur-md">
-          <div className="flex items-center gap-2 mb-4 md:mb-6 text-white">
-            <Coffee className="w-4 h-4 md:w-5 md:h-5 text-white/70" />
-            <h3 className="text-xs md:text-sm font-black tracking-widest uppercase text-white/70">
-              {t.hobbiesTitle}
-            </h3>
-          </div>
-          
-          <div className="grid grid-cols-2 gap-3 md:gap-4">
-            {t.hobbies.map((hobby, i) => {
-              const Icon = hobby.icon;
-              return (
-                <div key={i} className="flex flex-col gap-1.5 md:gap-2 p-2.5 md:p-3 rounded-xl md:rounded-2xl bg-white/5 hover:bg-white/10 transition-colors border border-white/10">
-                  <Icon className={`w-5 h-5 md:w-6 md:h-6 ${hobby.color}`} />
-                  <span className="text-[10px] md:text-xs font-bold text-white/90 leading-tight">{hobby.text}</span>
-                </div>
-              );
-            })}
-          </div>
         </motion.div>
 
       </motion.div>
